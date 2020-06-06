@@ -8,7 +8,7 @@ class Shoe
 
   def initialize(brand)
     @brand = brand
-    
+    # if the brands in our BRANDS array do not exist then we shovel brand into BRANDS
      if !BRANDS.include?(brand)
       BRANDS << brand
      end
@@ -20,8 +20,9 @@ class Shoe
   end
 
   def self.all
-    BRANDS
-    
+    if !BRANDS.include?(brand)
+      BRANDS << brand
+     end
   end
 
 end
